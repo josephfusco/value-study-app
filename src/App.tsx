@@ -43,7 +43,7 @@ export default function App() {
         cancelAnimationFrame(rafRef.current)
       }
     }
-  }, [processImage])
+  }, [processImage, image])
 
   const handleFile = (file: File) => {
     if (!file.type.startsWith("image/")) return
