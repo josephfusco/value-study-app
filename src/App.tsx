@@ -170,6 +170,18 @@ export default function App() {
           </Button>
         </div>
       )}
+
+      <footer className="mt-auto pt-8 text-center text-sm text-gray-500">
+        <p>crafted with &lt;3 in Rochester, New York</p>
+        <a
+          href="https://github.com/josephfusco/value-study-app"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-4 block hover:underline"
+        >
+          GitHub
+        </a>
+      </footer>
     </div>
   )
 }
