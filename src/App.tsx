@@ -89,6 +89,9 @@ export default function App() {
       <h1 className="text-2xl font-semibold mb-6">Value Study</h1>
 
       <div
+        role="button"
+        tabIndex={0}
+        aria-label={image ? "Click to upload a new image" : "Click or drop image to upload"}
         className={`w-full max-w-2xl border-2 border-dashed rounded-lg p-4 mb-6 transition-colors ${
           isDragging ? "border-gray-900 bg-gray-100" : "border-gray-300"
         }`}
@@ -99,6 +102,12 @@ export default function App() {
         onDragLeave={() => setIsDragging(false)}
         onDrop={handleDrop}
         onClick={() => fileInputRef.current?.click()}
+        onKeyDown={(e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault()
+            fileInputRef.current?.click()
+          }
+        }}
       >
         <input
           ref={fileInputRef}
@@ -113,6 +122,8 @@ export default function App() {
 
         <canvas
           ref={canvasRef}
+          role="img"
+          aria-label={`Processed image with ${levels} value levels and ${contrast} contrast`}
           className={image ? "w-full h-auto cursor-pointer" : "hidden"}
         />
         {!image && (
@@ -125,14 +136,15 @@ export default function App() {
       {image && (
         <div className="w-full max-w-2xl space-y-4">
           <div className="flex items-center gap-2">
-            <span className="text-sm font-medium w-16">Values</span>
-            <div className="flex gap-2">
+            <span id="values-label" className="text-sm font-medium w-16">Values</span>
+            <div role="group" aria-labelledby="values-label" className="flex gap-2">
               {VALUE_PRESETS.map((preset) => (
                 <Button
                   key={preset}
                   variant={levels === preset ? "default" : "outline"}
                   size="sm"
                   onClick={() => setLevels(preset)}
+                  aria-pressed={levels === preset}
                 >
                   {preset}
                 </Button>
