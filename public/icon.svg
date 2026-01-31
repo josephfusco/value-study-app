@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Outer circle - dark gray -->
+  <circle cx="256" cy="256" r="240" fill="#404040"/>
+  <!-- Inner circle - lighter gray for depth -->
+  <circle cx="256" cy="256" r="200" fill="#505050"/>
+  <!-- Abstract "V" shape representing value -->
+  <path d="M256 340 L176 180 L206 180 L256 290 L306 180 L336 180 Z" fill="#909090"/>
+  <!-- Horizontal line through V representing study/analysis -->
+  <rect x="166" y="230" width="180" height="12" rx="6" fill="#707070"/>
+</svg>
