@@ -8,6 +8,14 @@ A browser-based tool for converting images to posterized grayscale. Useful for a
 - Configurable value levels (3, 5, or 9)
 - Contrast adjustment (-100 to +100)
 - Export as PNG
+- Fully keyboard accessible
+
+## PWA Features
+
+- Installable on desktop and mobile (Add to Home Screen)
+- Works offline after first visit
+- Auto-updates when new versions are deployed
+- Standalone app experience (no browser chrome)
 
 ## Tech Stack
 
